@@ -1,0 +1,12 @@
+
+html, body {
+  background-color: transparent;
+}
+
+body {
+  background-image: url("../img/splash.png");
+}
+
+h1 {
+  color: black;
+}

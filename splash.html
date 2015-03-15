@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="splashApp">
+<head>
+  
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
+  <link rel="stylesheet" href="node_modules/angular/angular-csp.css"/>
+  <link rel="stylesheet" href="css/splash.css"/>
+  
+  <!-- scripts -->
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="js/splash.js"></script>
+  
+</head>
+<body ng-controller="SplashController">
+
+  <div class="container">
+    <h1>Address Book</h1>
+    <p>Version: {{version}}</p>
+    <ul ng-repeat="author in authors">
+      <li>{{author}}</li>
+    </ul>
+  </div>
+  
+</body>
+</html>

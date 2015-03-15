@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="sqliteApp">
+<head>
+  
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
+  <link rel="stylesheet" href="node_modules/angular/angular-csp.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  
+  <!-- scripts -->
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  <title>node-webkit node-sqlite3 node-uuid angular bootstrap demo</title>
+  
+</head>
+<body ng-controller="SQLiteController">
+  
+  <div class="container">
+    <h2>Address Book</h2>
+  </div>
+  
+  <!-- list of items -->
+  <div class="container">  
+    <ol>
+      
+      <!-- for each item... -->
+      <li ng-repeat="item in items">
+        <span class="bold">{{item.name}}</span> {{item.email}}
+        <form class="inline" ng-submit="delete(item.uuid)">
+          <input class="btn btn-xs btn-danger" type="submit" value="x" ng-disabled="!ready">
+        </form>
+      </li>
+      
+    </ol>
+  </div>
+  
+  <hr/>
+  
+  <!-- add item form -->
+  <div class="container">  
+    <h3>Add Item</h3>
+    <form ng-submit="add()">
+      
+      <!-- name -->
+      <div class="form-group">
+        <label for="add-name">Name</label>
+        <input id="add-name" type="text" class="form-control" ng-model="name">
+      </div>
+      
+      <!-- email -->
+      <div class="form-group">
+        <label for="add-email">Email</label>
+        <input id="add-email" type="email" class="form-control" ng-model="email">
+      </div>
+      
+      <!-- submit item -->
+      <div class="form-group">
+        <input class="btn btn-lg btn-primary" type="submit" value="add" ng-disabled="!ready">
+      </div>
+      
+    </form>
+  </div>
+  
+  <hr/>
+  
+  <!-- available actions -->
+  <div class="container">
+    <h3>Actions</h3>
+    
+    <!-- update address book -->
+    <form ng-submit="update()">
+      <div class="form-group">
+        <input class="btn btn-lg btn-primary" type="submit" value="update" ng-disabled="!ready">
+      </div>
+    </form>
+    
+  </div>
+
+</body>
+</html>

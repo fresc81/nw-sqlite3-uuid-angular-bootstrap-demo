@@ -1,0 +1,35 @@
+{
+  "name": "nw-sqlite3-uuid-angular-bootstrap-demo",
+  "version": "0.1.1",
+  "description": "A simple node-webkit (nw.js) address book in bootstrap style with angular MVC and SQLite database.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Bottin <paul.bottin+git@gmail.com>",
+  "contributors": [
+  ],
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "sqlite3": "~3.0.5",
+    "angular": "~1.3.14",
+    "bootstrap": "~3.3.2",
+    "node-uuid": "~1.4.3"
+  },
+  "single-instance": false,
+  "main": "splash.html",
+  "window": {
+    "resizable": false,
+    "toolbar": false,
+    "position": "center",
+    "width": 400,
+    "height": 300,
+    "frame": false,
+    "show_in_taskbar": false,
+    "transparent": true,
+    "always-on-top": true
+  },
+  "webkit": {
+    "plugin": true,
+    "java": false
+  }
+}
