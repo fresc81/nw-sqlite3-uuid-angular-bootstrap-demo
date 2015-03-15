@@ -16,7 +16,7 @@ angular.module('sqliteApp', [])
     var db = new sqlite3.Database('data.db', function() {
       
       // prepare table...
-      db.run('CREATE TABLE IF NOT EXISTS items (uuid TEXT NOT NULL UNIQUE, name TEXT NOT NULL UNIQUE, email TEXT NOT NULL UNIQUE)', function() {
+      db.run('CREATE TABLE IF NOT EXISTS items (uuid TEXT PRIMARY KEY NOT NULL UNIQUE, name TEXT NOT NULL UNIQUE, email TEXT NOT NULL UNIQUE)'/*+' WITHOUT ROWID'*/, function() {
         
         // prepare statements...
         stmtAdd = db.prepare('INSERT INTO items VALUES (?,?,?)');
